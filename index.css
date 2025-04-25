@@ -123,4 +123,82 @@
       transform: translateX(0);
     }
   }
+  @media (max-width: 1024px) {
+    .content {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+      text-align: center;
+    }
   
+    .content img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+  
+    .parag {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      height: auto;
+      padding: 20px;
+    }
+  
+    .content {
+      width: 90%;
+      box-shadow: none;
+      margin-top: 20px;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .nav-links {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .nav-links a {
+      margin: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .parag h2 {
+      font-size: 20px;
+    }
+  
+    .parag p {
+      font-size: 14px;
+    }
+  
+    .logo {
+      font-size: 18px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .nav-links a {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+  }
+   
