@@ -46,4 +46,30 @@
       transform: translateY(0);
     }
   }
-   
+  .container {
+    background-color: transparent;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    animation: aimCo 5s ease;
+  }
+  
+  @keyframes aimCo {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  }
+    
