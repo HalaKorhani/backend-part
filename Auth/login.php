@@ -33,3 +33,10 @@
 
 </body>
 </html>
+<?php 
+if(isset($_SESSION["msg"])) {
+    echo "<h3 class='error-message'>" . $_SESSION["msg"] . "</h3>";
+}
+unset($_SESSION["msg"]);
+?>
+
