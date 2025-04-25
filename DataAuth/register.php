@@ -9,3 +9,12 @@ if(
     isset($_POST["gender"]) && !empty(trim($_POST["gender"]))  && 
     isset($_POST["country"]) && !empty(trim($_POST["country"]))  
 ){
+    require_once("../connection.php");
+$fname = trim($_POST["fname"]);
+$lname = trim($_POST["lname"]);
+$address = trim($_POST["address"]);
+$email = trim($_POST["email"]);
+$pass = trim($_POST["password"]);
+$gender = trim($_POST["gender"]);
+$country = trim($_POST["country"]);
+
