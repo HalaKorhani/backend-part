@@ -28,3 +28,10 @@
     <a href="logout.php" class="logout-btn">Logout</a>
   </body>
 </html>
+<?php
+if (isset($_SESSION["login"])) {
+  echo '<button class="btn1"><a href="quiz/quiz.html">quiz</a></button>';
+} else {
+  echo '<p style="color:white;">You must register or login to take the quiz.</p>';
+}
+?>
