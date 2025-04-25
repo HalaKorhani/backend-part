@@ -31,3 +31,7 @@ $stmt ->execute();
 $_SESSION["login"] = true;
 header("location:../index.php");
 
+}else{
+    $_SESSION["login"] = false;
+    header("location:../Auth/register.php");
+}
