@@ -20,7 +20,7 @@
       <div class="content">
         <img src="E967213732B572908743D0C15CF8BF34.jpg" alt="" />
         <div class="parag">
-          <h2>Hello in halaQuiz ONLINE lamira wel hlwi ahla whdi b l3alam klu </h2>
+          <h2>Welcome to Quizes websites </h2>
         </div>
       </div>
     </div>
