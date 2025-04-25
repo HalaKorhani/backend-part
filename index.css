@@ -64,4 +64,23 @@
     border-radius: 12px;
     transform: scale(1.8);
   }
-      
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    background-color: transparent;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(-45deg, #667eea 10%, #764ba2 25%, #013692 100%);
+    width: 80%;
+    height: 100%;
+    margin-top: 50px;
+    box-shadow: 3px 3px 3px 3px #99adcf;
+    border-radius: 10px;
+  }
+       
