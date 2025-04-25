@@ -18,4 +18,22 @@ body {
       background: linear-gradient(135deg, rgba(217, 83, 79, 0.7), #89f7fe);
     }
   }
+  h3 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: log 1s alternate infinite;
+  }
+  
+  @keyframes log {
+    from {
+      transform: translateY(10px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
   
