@@ -92,4 +92,20 @@ body {
     background-color: #c9302c;
     border-color: #c9302c;
   }
-    
+  h3.error-message {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    animation: fadeInError 1s ease-in-out;
+  }
+  
+  @keyframes fadeInError {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+     
