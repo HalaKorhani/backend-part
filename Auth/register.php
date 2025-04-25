@@ -80,3 +80,10 @@
 </select>
 <button type="submit" class="btn btn-primary mb-3 mt-3">Submit</button>
 </form>
+<label for="firstName">First Name</label>
+<input name="fname" type="text" class="form-control" id="firstName">
+
+...
+
+<label for="password">Password</label>
+<input name="password" type="password" class="form-control" id="password">
