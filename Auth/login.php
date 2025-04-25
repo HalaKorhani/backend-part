@@ -25,5 +25,11 @@
             <button type="submit" class="btn btn-primary mb-3 mt-3">Submit</button>
         </form>
     </div>
+    <label for="loginEmail" class="form-label">Email</label>
+<input name="email" type="text" class="form-control" id="loginEmail">
+
+<label for="loginPassword" class="form-label">Password</label>
+<input name="password" type="password" class="form-control" id="loginPassword">
+
 </body>
 </html>
