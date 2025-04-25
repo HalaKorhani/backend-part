@@ -28,4 +28,6 @@ $stmt -> bindParam(":password",$pass);
 $stmt -> bindParam(":gender", $gender );
 $stmt -> bindParam(":country", $country );
 $stmt ->execute();
+$_SESSION["login"] = true;
+header("location:../index.php");
 
