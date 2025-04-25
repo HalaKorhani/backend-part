@@ -39,4 +39,6 @@ if(isset($_SESSION["msg"])) {
 }
 unset($_SESSION["msg"]);
 ?>
+<input name="email" type="email" class="form-control" id="loginEmail" required autocomplete="email">
+<input name="password" type="password" class="form-control" id="loginPassword" required>
 
