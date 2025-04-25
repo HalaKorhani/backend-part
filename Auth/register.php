@@ -18,3 +18,4 @@
     <label for="password" class="form-label">Password</label>
     <input name="password" type="password" class="form-control" id="password" required>
 </div>
+<title>Registration</title>
