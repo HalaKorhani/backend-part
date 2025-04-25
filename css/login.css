@@ -1,0 +1,21 @@
+body {
+    background: linear-gradient(135deg, #667eea, #89f7fe);
+    animation: back 1s ease;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 1s;
+  }
+  
+  @keyframes back {
+    0% {
+      background: linear-gradient(135deg, #89f7fe, #764ba2);
+    }
+    50% {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    100% {
+      background: linear-gradient(135deg, rgba(217, 83, 79, 0.7), #89f7fe);
+    }
+  }
+  
