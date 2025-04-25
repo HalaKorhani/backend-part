@@ -7,4 +7,9 @@ if (isset($_POST["email"]) && isset($_POST["password"]) &&
         $pass = trim($_POST["password"]);
         
         require_once("../connection.php");
-        
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":email", $email);
+        $stmt->execute();
+        $user1 = $stmt->fetch(PDO::FETCH_ASSOC);
+             
