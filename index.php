@@ -35,3 +35,4 @@ if (isset($_SESSION["login"])) {
   echo '<p style="color:white;">You must register or login to take the quiz.</p>';
 }
 ?>
+<a href="logout.php" class="logout-btn">Logout</a>
