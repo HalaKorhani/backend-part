@@ -23,4 +23,28 @@
       background-position: 0% 50%;
     }
   }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
   
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    transition: 1s;
+    opacity: 0.5;
+    animation: txt 1.2s ease forwards, Text 3s infinite ease-in-out;
+    opacity: 0;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    background: linear-gradient(-45deg, #013692 50%, #764ba2 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+   
