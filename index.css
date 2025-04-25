@@ -47,4 +47,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-   
+  .nav-links a {
+    margin-right: 20px;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.5s;
+    animation: txt 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+  .nav-links a:hover {
+    opacity: 1;
+    background: linear-gradient(-45deg, #013692 50%, #764ba2 70%);
+    border-radius: 12px;
+    transform: scale(1.8);
+  }
+      
