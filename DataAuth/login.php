@@ -1,4 +1,4 @@
-<?php 
+quiz<?php 
 session_start();
 ob_start(); 
 if (isset($_POST["email"]) && isset($_POST["password"]) &&
@@ -17,11 +17,22 @@ if (isset($_POST["email"]) && isset($_POST["password"]) &&
             $_SESSION["msg"] = "incorrect username or password";
             header("location:../Auth/login.php");
             die();
-        }        
-
-    } elseif ($pass === $user1["password"]) { 
-        $_SESSION["login"] = true;
-        header("location:../index.php");
-        die();
-    } 
-    
+        } else {
+          
+            if (password_verify($pass, $user1["password"])) {
+                $_SESSION["login"] = true;
+                header("location:../index.php");
+                die();
+            } else {
+                $_SESSION["login"] = false;
+                $_SESSION["msg"] = "incorrect username or password";
+                header("location:../Auth/login.php");
+                die();
+            }
+        }
+} else {
+    $_SESSION["login"] = false;
+    $_SESSION["msg"] = "Please enter email and password";
+    header("location:../Auth/login.php");
+    die();
+}
