@@ -8,3 +8,10 @@ $correct_answer_index = $_POST['correct_answer_index'];
 $optionsJson = json_encode($options);
 $sql = "INSERT INTO questions (quizID, questionText, options, correct_answer_index)
         VALUES (:quizID, :questionText, :options, :correct_answer_index)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    ':quizID' => $quizID,
+    ':questionText' => $questionText,
+    ':options' => $optionsJson,
+    ':correct_answer_index' => $correct_answer_index,
+]);
