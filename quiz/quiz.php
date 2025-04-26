@@ -69,3 +69,30 @@ if (!$quiz) {
         ?>
     </div>
 </form>
+<script>
+function deletee(id){
+    console.log(id);
+
+    const urlencoded = new URLSearchParams();
+    urlencoded.append("id", id);
+
+    const requestOptions = {
+        method: "POST",
+        body: urlencoded,
+    };
+
+    fetch("http://localhost/twophp/proHala/action/quizDelete.php", requestOptions)
+        .then((response) => response.json())
+        .then((result) => getDataDelete(result, id))
+        .catch((error) => console.error(error));
+
+    function getDataDelete(result, id){
+        if(result.success){
+            let row = document.querySelector(`tr[meta-cat='${id}']`);
+            if (row) row.remove();
+        }
+    }
+}
+</script>
+</body>
+</html>
