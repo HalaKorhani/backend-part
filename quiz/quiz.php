@@ -22,3 +22,28 @@
                 <th scope="col">Delete</th>
             </tr>
         </thead>
+        <?php 
+require_once("../connection.php");
+
+$sql = "SELECT * FROM quiz";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$quiz = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (!$quiz) {
+    echo '<tr><td colspan="3">No quizzes found</td></tr>';
+} else {
+    foreach($quiz as $q){
+?>
+        <tr meta-cat="<?php echo $q['id']; ?>">
+            <th><?php echo $q["id"]; ?></th>
+            <th><?php echo $q["title"]; ?></th>
+            <th>
+                <button type="button" class="btn btn-danger" onclick="deletee(<?php echo $q['id']; ?>)">Delete</button>
+            </th>
+        </tr>
+<?php
+    }
+}
+?>
+</table>
