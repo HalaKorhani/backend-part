@@ -6,3 +6,5 @@ $questionText = $_POST['questionText'];
 $options = $_POST['options'];
 $correct_answer_index = $_POST['correct_answer_index'];
 $optionsJson = json_encode($options);
+$sql = "INSERT INTO questions (quizID, questionText, options, correct_answer_index)
+        VALUES (:quizID, :questionText, :options, :correct_answer_index)";
