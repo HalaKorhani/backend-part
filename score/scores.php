@@ -12,4 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($_POST as $key => $selectedOption) {
                 if (strpos($key, 'question_') === 0) {
                     $questionID = substr($key, 9); // Remove "question_" from the ID
-        
+                    $sql = "SELECT correct_answer_index FROM questions WHERE id = :questionID";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute(['questionID' => $questionID]);
+                    $question = $stmt->fetch(PDO::FETCH_ASSOC);
+              
