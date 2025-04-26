@@ -21,3 +21,6 @@ if(isset($_POST["id"]) && !empty(trim($_POST["id"])) && is_numeric($_POST["id"])
     $stmt->execute();
     echo json_encode(["success" => "success Delete"]);
     die();
+}else{ 
+    echo json_encode(["error" => "error"]);
+}
