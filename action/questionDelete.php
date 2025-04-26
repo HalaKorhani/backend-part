@@ -15,3 +15,9 @@ if(isset($_POST["id"]) && !empty(trim($_POST["id"])) && is_numeric($_POST["id"])
     if(!in_array($id , $questionArray)){
         echo json_encode(["error" => "error"]);
     }
+    $sql = "DELETE FROM questions WHERE id=:id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":id", $id);
+    $stmt->execute();
+    echo json_encode(["success" => "success Delete"]);
+    die();
