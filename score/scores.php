@@ -21,4 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 }
             }
-                     
+            $sql = "INSERT INTO scores (userID, quizID, score) VALUES (:userID, :quizID, :score)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['userID' => $userID, 'quizID' => $quizID, 'score' => $score]);
+                        
