@@ -47,3 +47,25 @@ if (!$quiz) {
 }
 ?>
 </table>
+<!-- Quiz Creation Form -->
+<form action="../action/addQuiz.php" method="POST">
+    <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Name quiz</span>
+        <input name="quiz" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+        <button style="width:30%" type="submit" class="btn btn-primary">Create Quiz</button>
+    </div>
+
+    <!-- Feedback Message -->
+    <div>
+        <?php
+        if (isset($_SESSION["addQuiz"])) {
+            if ($_SESSION["addQuiz"] === true) {
+                echo '<p style="color: green; width:400px; padding:10px">Added Successfully</p>';
+            } else {
+                echo '<h6 style="color: red; width:200px; padding:10px">Failed</h6>';
+            }
+            unset($_SESSION["addQuiz"]);
+        }
+        ?>
+    </div>
+</form>
