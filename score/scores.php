@@ -16,4 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute(['questionID' => $questionID]);
                     $question = $stmt->fetch(PDO::FETCH_ASSOC);
-              
+                    if ($question && $question['correct_answer_index'] == $selectedOption) {
+                        $score++;
+                    }
+                }
+            }
+                     
