@@ -47,7 +47,7 @@
         echo "<input type='hidden' name='quizID' value='" . htmlspecialchars($quizID) . "' />";
 
         echo "<table class='table table-striped'>";
-        echo "<thead><tr><th scope='col'>ID</th><th scope='col'>Question</th><th scope='col'>Options</th></tr></thead>";
+        echo "<thead><tr><th scope='col'>ID</th><th scope='col'>Question</th><th scope='col'>Options</th><th scope='col'>Actions</th><th scope='col'>Delete</th></tr></thead>";
         echo "<tbody>";
 
         foreach ($quizQuestions as $question) {
@@ -63,6 +63,12 @@
             }
 
             echo "</td>";
+            echo "<td>";
+            echo "<a href='editquestion.php?id=" . htmlspecialchars($question['id']) . "' class='btn btn-warning'>Update</a>";
+            echo "</td>";
+            echo "<td>";
+            echo "<button type='button' class='btn btn-danger' onclick='deleteQuestion(" . htmlspecialchars($question['id']) . ")'>Delete</button>";
+            echo "</td>";
             echo "</tr>";
         }
 
@@ -72,6 +78,40 @@
         echo "</form><hr />";
     }
     ?>
+
+<script>
+function deleteQuestion(id) {
+    const urlencoded = new URLSearchParams();
+    urlencoded.append("id", id);
+
+    const requestOptions = {
+        method: "POST",
+        body: urlencoded,
+    };
+
+    fetch("../action/questionDelete.php", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                Failed to delete question.
+                let rows = document.querySelectorAll("table tbody tr");
+                for (let row of rows) {
+                    let firstTd = row.querySelector("td:first-child");
+                    if (firstTd && firstTd.textContent.trim() === id.toString()) {
+                        row.remove();
+                        break;
+                    }
+                }
+            } else {
+                alert("Failed to delete question.");
+            }
+        })
+        .catch(error => {
+            console.error("Error deleting question:", error);
+            alert("Error deleting question.");
+        });
+}
+</script>
 
 </body>
 </html>
